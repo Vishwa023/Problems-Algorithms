@@ -65,3 +65,9 @@ int main()
     return 0;
 }
 
+
+// TEST CASE
+
+// Input n=8,k=3
+// value of array : 2 3 5 7 6 1 5 8
+// Output : 5 7 7 7 7 8 
