@@ -11,7 +11,7 @@ int main()
 	{
 		for(ll j=0;j<=min(i,k);j++)
 		{
-			if(i==0 || j==i)
+			if(j==0 || j==i)
 			{
 				dp[i][j]=1;
 			}
