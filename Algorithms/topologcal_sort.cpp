@@ -11,7 +11,7 @@ using namespace std;
 
 int n, m, indegree[100];
 vector<int>g[100];
-vector<int>order; // stores the order of the topological sort
+vector<int>order; //stores the order of the topological sort
 
 int topological_sort()
 {
