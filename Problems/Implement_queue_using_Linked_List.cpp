@@ -68,6 +68,7 @@ int main()
     IOS;
     ll operation;
     cin >> operation;
+    Queue();
     while(operation--)
     {
         // enQueue : eq;
