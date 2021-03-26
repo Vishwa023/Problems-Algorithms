@@ -44,4 +44,65 @@ Hint:   1) Get the Middle of the array and make it root.
 2. Check if given graph is tree or not
 Hint:   tree does not have any cycle
         -> to detect cycle we can use bfs or dfs (approach - For every visisted vertex 'v' if there is an adjacent vetex 'u' such that u is already visited and u is not the parent of the 'v' the there is a cycle in the graph)
-        
+    
+3. Reverse A linked list in a group of given size (Recursively Solution)
+Hint:   ListNode* reverse(ListNode *head, int k)
+        {
+            if(!head)
+                return NULL;
+            ListNode *cur = head, *next = NULL, *prev = NULL;
+            int cnt = 0;
+            while(cur != NULL && cnt < K)
+            {
+                next = cur -> next;
+                cur -> next = prev;
+                prev = cur;
+                cur = next;
+                cnt++;
+            }
+
+            if(next)
+                head -> next = reverse(next, k);
+
+            return prev;
+        }
+        reverse(head, k);
+
+4. Deepest leaf node in a binary Tree
+PS: Given a Binary Tree, find the deepest leaf node that is left child of its parent.
+Hint:   The idea is to Recursively traverse the given binary tree and while traversing maintain a "level" which will store the current node's level in the tree.
+        If the current node is left leaf(how to check if it's left leaf or not - pass one bool true/false while calling recursive function and if it's left side then check left child and right child if it is null or not) and the level is more than the level of deepest leaf seen so far. If level is more than update the maximum level to that level.
+        If current node is not leaf then simply check in right and left subtree via calling recursive function.
+
+5. Iterative Methods to print Inorder, Preorder and Postorder traversal(Using Stack)
+    a) Preorder 
+    Hint:         5        Preorder should be -> 5, 1 , 3, 4, 2, 7 (root, left, right)
+                1    2
+              3   4     7 
+            -> Create an empty stack and push root into the stack and follow below steps until stack is not empty
+                1. pop an element from the stack and print it out.
+                2. push the right child of poped element. 
+                3. push the left child of poped element.
+
+    b) Inorder
+    Hint:         5        Inorder should be -> 3, 1, 4, 5, 0, 2, 7 (left, root, right)
+                1     2
+              3   4 0    7 
+            -> 1. Create and empty stack and initialize current node as root
+               2. Push the current node to stack and set current  = current -> left until current is NULL
+               3. If current is NULL and stack is not empty then
+                    a. pop the top item from the stack
+                    b. print the poped item and set current = poped item -> right
+                    c. Go to the 2nd point and follow the same steps
+               4. If current is NULL and stack is empty then we are done.
+
+    b) Postorder
+    Hint:         5        Postorder should be -> 3, 4, 1, 0, 7, 2, 5 (left, right, root)
+                1     2
+              3   4 0    7 
+            -> create 2 stacks - s1, s2
+                1. Push node to the s1
+                2. Loop while s1 stack is not empty
+                    a. Pop a node from s1 and push it to the s2
+                    b. push left and right node of poped element to s1
+                3. print content of s2
