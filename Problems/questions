@@ -106,3 +106,13 @@ Hint:   The idea is to Recursively traverse the given binary tree and while trav
                     a. Pop a node from s1 and push it to the s2
                     b. push left and right node of poped element to s1
                 3. print content of s2
+
+6. Stepping Numbers 
+PS: Given two integers ‘n’ and ‘m’, find all the stepping numbers in range [n, m]. A number is called stepping number if all adjacent digits have an absolute difference of 1. 321 is a Stepping Number while 421 is not.
+Hint: If there is stepping Number 'U' and if we want to find stepping number 'V' from the 'U' then,
+      V = U * 100 + lastDigit - 1;
+      V = U * 100 + lastDigit + 1;
+      edge case: When lastDigit is 0 or 9.
+      -> create queue and push all the stepping numbers found from the current number till the queue is empty.
+      -> do the above steps for all the numbers starting from 0 to 9.
+      link of the code: https://www.geeksforgeeks.org/stepping-numbers/
