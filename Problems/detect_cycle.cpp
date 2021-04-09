@@ -25,7 +25,7 @@ ll dfs(ll x, ll par)
         else
         {
             //if the node is already visited then parent should equal to x if it isn't then there should be cycle
-            if(par != x)
+            if(par != it)
                 return false;               
         }
     }
