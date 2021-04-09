@@ -116,3 +116,8 @@ Hint: If there is stepping Number 'U' and if we want to find stepping number 'V'
       -> create queue and push all the stepping numbers found from the current number till the queue is empty.
       -> do the above steps for all the numbers starting from 0 to 9.
       link of the code: https://www.geeksforgeeks.org/stepping-numbers/
+
+7. Binary Search Condition: 
+    1) while (low < high) is used when you're searching the range [low, high). When updating high, use high = mid. When updating low, use low = mid + 1.
+    2) while (high - low > 1) is used when you're searching the range (low, high). When updating high, use high = mid. When updating low, use low = mid.
+    3) while (low <= high) is used when you're searching the range [low, high]. When updating high, use high = mid - 1. When updating low, use low = mid + 1.
