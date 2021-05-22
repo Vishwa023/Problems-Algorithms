@@ -121,3 +121,6 @@ Hint: If there is stepping Number 'U' and if we want to find stepping number 'V'
     1) while (low < high) is used when you're searching the range [low, high). When updating high, use high = mid. When updating low, use low = mid + 1.
     2) while (high - low > 1) is used when you're searching the range (low, high). When updating high, use high = mid. When updating low, use low = mid.
     3) while (low <= high) is used when you're searching the range [low, high]. When updating high, use high = mid - 1. When updating low, use low = mid + 1.
+
+8. What is Complete Binary Tree
+    All levels are completely filled except possibly the last level and the last level has all keys as left as possible.
